@@ -22,5 +22,4 @@ public class $04_FindSubsets{
         findSubsets(str, "", 0);
     }
    
-    
 }
