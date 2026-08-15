@@ -44,10 +44,30 @@ public class $02_HeadAndTail {
           tail  = newNode;
        }
 
+       // add at middle
+       public void add(int idx, int data){
+
+        if (idx == 0) {
+            addFirst(data);
+            return;
+        }
+         
+         Node newNode = new Node(data);
+         Node temp = head;
+         int i = 0;
+         while (i < idx-1) {
+
+            temp = temp.next;
+            i++;
+         }
+
+         newNode.next = temp.next;
+         temp.next = newNode;
+       }
+
        public void printLL(){
               
-            
-           if(head == null){
+              if(head == null){
               System.out.println("LL is empty");
               return;
            }
@@ -66,6 +86,10 @@ public class $02_HeadAndTail {
             ll.addLast(3);
             ll.addLast(4);
             ll.printLL();
+            System.out.println("--------------------");
+            ll.add(2, 5);
+            ll.printLL();
+            // System.out.println("reference value = "+ll.head);     // just for see inside value of reference 
        }
     
         
